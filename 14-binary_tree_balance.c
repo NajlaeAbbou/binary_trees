@@ -1,4 +1,3 @@
-#include "binary_trees.h"
 #include "9-binary_tree_height.c"
 
 /**
@@ -8,7 +7,12 @@
  */
 int binary_tree_balance(const binary_tree_t *tree)
 {
+	size_t tl, tr;
+
 	if (!tree)
 		return (0);
-	return (binary_tree_height(tree->left) - binary_tree_height(tree->right));
+	tl = binary_tree_height(tree->left);
+	tr = binary_tree_height(tree->right);
+
+	return (tl - tr);
 }
